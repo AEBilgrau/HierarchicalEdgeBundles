@@ -16,4 +16,5 @@
 #' @seealso
 #'   Core user function: \code{\link{plotHierarchicalEdgeBundles}}
 #' @import igraph
+#' @importFrom ape plot.phylo
 NULL

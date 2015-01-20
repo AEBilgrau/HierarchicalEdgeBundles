@@ -9,9 +9,9 @@ URL: https://github.com/AEBilgrau/HierarchicalEdgeBundles
 BugReports: https://github.com/AEBilgrau/HierarchicalEdgeBundles/issues
 Description: Plot graphs and dendrograms with hierarchical edge bundling
 License: GPL (>=2)
+Suggests:
+    Hmisc
 Imports:
-    Hmisc,
-    ape
-Depends:
-    adephylo,
-    igraph
+    ape,
+    igraph,
+    adephylo

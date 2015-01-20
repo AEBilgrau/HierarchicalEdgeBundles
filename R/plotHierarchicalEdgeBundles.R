@@ -32,8 +32,8 @@
 #' @examples
 #' library("igraph")
 #' library("ape")
-#' n <- 10
-#'   
+#' n <- 10 
+#' 
 #' # Create a graph
 #' corr <- cor(matrix(rnorm(n^2), n, n))
 #' rownames(corr) <- colnames(corr) <- 
@@ -60,11 +60,10 @@
 #'                             v.use.only = 1, debug = FALSE,
 #'                             args.lines = list(col = "red", lwd = 2))
 #' @import adephylo
-#' @import igraph
 #' @export
 plotHierarchicalEdgeBundles <- function(phylo, 
                                         graph,
-                                        beta = 0.80,
+                                        beta = 0.80,  # Bundling strength
                                         include.mrca = FALSE,
                                         simplify = FALSE,
                                         ...,
@@ -74,11 +73,8 @@ plotHierarchicalEdgeBundles <- function(phylo,
                                         e.cols,
                                         v.use.only,
                                         e.use.only) {
-
-  stopifnot(require("ape"))
   
   plot(phylo, edge.color = ifelse(debug,"grey","#00000000"), ...)
-  # Get data
   phy.dat <- get("last_plot.phylo", envir = .PlotPhyloEnv)
   pos <- with(phy.dat, data.frame(i = seq_along(xx), x = xx, y = yy))
   # Add points
@@ -127,7 +123,9 @@ plotHierarchicalEdgeBundles <- function(phylo,
 
 
 
-# MODIFIED sp.tips from adephylo!  # Will be updated later
+# MODIFIED sp.tips from adephylo!  
+# Will be updated in a later version of adephlyo
+# This overwrites the current function
 sp.tips2 <- function(x, tip1, tip2, useTipNames = FALSE, 
                      quiet = FALSE, include.mrca = TRUE) {
   x <- as(x, "phylo4")
