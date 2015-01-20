@@ -25,7 +25,7 @@ order <- 3
 x <- matrix(rnorm(12), 6, 2)
 t <- seq(0, 1, l = nrow(x) - order + 2)
 y <- seq(0, 1, l = 50)
-print(res <- Bmisc:::deboor(x, t, y, order))
+print(res <- HierarchicalEdgeBundles:::deboor(x, t, y, order))
 plot(x, type = "b", col = "grey", pch = 16)
 points(res, col = "red", type = "l", pch = 16, lwd = 3)
 }

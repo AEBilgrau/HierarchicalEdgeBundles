@@ -40,13 +40,13 @@ x <- list(x = cumsum(rnorm(7)),
           y = cumsum(rnorm(7)))
 plot(x, type = "b", col = "grey", pch = 16)
 for (b in seq(0.1, 1, l = 9))
-  lines(Bmisc:::straightenedBezier(x, beta = b))
+  lines(HierarchicalEdgeBundles:::straightenedBezier(x, beta = b))
 # B-splines
 x <- cumsum(rnorm(7))
 y <- cumsum(rnorm(7))
 plot(x, y, type = "b", col = "grey", pch = 16)
 for (b in seq(0.1, 0.9, l = 9))
-  lines(Bmisc:::straightenedBSpline(x, y, beta = b))
+  lines(HierarchicalEdgeBundles:::straightenedBSpline(x, y, beta = b))
 }
 \author{
 Anders Ellern Bilgrau

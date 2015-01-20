@@ -57,7 +57,7 @@ bSpline <- function(x, y, order = 4, n.evals = 100) {
 #' x <- matrix(rnorm(12), 6, 2)
 #' t <- seq(0, 1, l = nrow(x) - order + 2)
 #' y <- seq(0, 1, l = 50)
-#' print(res <- Bmisc:::deboor(x, t, y, order))
+#' print(res <- HierarchicalEdgeBundles:::deboor(x, t, y, order))
 #' plot(x, type = "b", col = "grey", pch = 16)
 #' points(res, col = "red", type = "l", pch = 16, lwd = 3)
 #' @keywords internal
@@ -124,7 +124,7 @@ deboor <- function(x, t, y, order) {
 #'           y = cumsum(rnorm(7)))
 #' plot(x, type = "b", col = "grey", pch = 16)
 #' for (b in seq(0.1, 1, l = 9)) 
-#'   lines(Bmisc:::straightenedBezier(x, beta = b))
+#'   lines(HierarchicalEdgeBundles:::straightenedBezier(x, beta = b))
 #' @keywords internal
 straightenedBezier <- function(x, y, beta = 0.5, n.evals = 100) {
   stopifnot(require("Hmisc"))
@@ -153,7 +153,7 @@ straightenedBezier <- function(x, y, beta = 0.5, n.evals = 100) {
 #' y <- cumsum(rnorm(7))
 #' plot(x, y, type = "b", col = "grey", pch = 16)
 #' for (b in seq(0.1, 0.9, l = 9)) 
-#'   lines(Bmisc:::straightenedBSpline(x, y, beta = b))
+#'   lines(HierarchicalEdgeBundles:::straightenedBSpline(x, y, beta = b))
 #' @keywords internal
 straightenedBSpline <- function(x, y, order = 4, beta = 0.5, n.evals = 100) {
   if (missing(y)) {
