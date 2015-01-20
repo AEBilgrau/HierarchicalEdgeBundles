@@ -40,7 +40,7 @@
 #'   apply(combn(LETTERS, 2), 2, paste0, collapse = "")[1:n]
 #' adj <- abs(corr)
 #' graph <- graph.adjacency(adj, mode = "un", weighted = TRUE, diag = FALSE)
-#' E(graph)$color <- ifelse(get.lower.tri(corr) < 0, "blue", "red")
+#' E(graph)$color <- ifelse(corr[lower.tri(corr)] < 0, "blue", "red")
 #' 
 #' phylo <- as.phylo(hclust(as.dist(1 - adj), method = "ward.D"))
 #' plotHierarchicalEdgeBundles(phylo, graph, type = "fan",
@@ -49,16 +49,16 @@
 #' par(mfrow = c(1, 3), mar = c(0, 0, 0, 0))
 #' plot(phylo, type = "fan")
 #' plotHierarchicalEdgeBundles(phylo, graph, type = "fan", beta = 0.95,
-#'                             args.lines = list(col = alp("steelblue", 90)))
+#'                             args.lines = list(col = "#4682B470"))
 #' plotHierarchicalEdgeBundles(phylo, graph, type = "fan", beta = 0.85,
-#'                             args.lines = list(col = alp("steelblue", 90)))
+#'                             args.lines = list(col = "#4682B470"))
 #'              
 #' # Extra control of plotting and debugging               
 #' par(mfrow = c(1,2))
 #' plot(phylo, type = "unrooted")        
 #' plotHierarchicalEdgeBundles(phylo, graph, type = "unrooted", beta = 0.8,
 #'                             v.use.only = 1, debug = FALSE,
-#'                             args.lines = list(col = alp("red", 1), lwd = 2))
+#'                             args.lines = list(col = "red", lwd = 2))
 #' @import adephylo
 #' @import igraph
 #' @export
