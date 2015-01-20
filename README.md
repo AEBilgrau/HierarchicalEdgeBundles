@@ -2,7 +2,7 @@
 Hierarchical Edge Bundles in R
 ------------------------------
 
-This packages implements a crude version of the excellent visualization method of hierarchical edge bundling [1].
+This packages implements a crude version of the excellent visualization method of hierarchical edge bundling [1] in R.
 
 ## Installation
 To install the latest version of **HierarchicalEdgeBundles** directly from the master branch at GitHub, run 
@@ -20,4 +20,6 @@ A short tutorial goes here.
 
 ## References
 
-  [1] <Reference to HEB here>
+  [1] Holten, Danny. "Hierarchical Edge Bundles: Visualization of Adjacency 
+      Relations in Hierarchical Data." Visualization and Computer Graphics, 
+      IEEE Transactions on 12.5 (2006): 741-748.
