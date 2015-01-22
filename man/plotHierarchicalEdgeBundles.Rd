@@ -3,14 +3,14 @@
 \alias{plotHierarchicalEdgeBundles}
 \title{Hierarchical Edge Bundling}
 \usage{
-plotHierarchicalEdgeBundles(phylo, graph, beta = 0.8, include.mrca = FALSE,
+plotHierarchicalEdgeBundles(graph, phylo, beta = 0.8, include.mrca = FALSE,
   simplify = FALSE, ..., args.lines = list(), args.points = list(pch = 16,
   cex = 0.1), debug = FALSE, e.cols, v.use.only, e.use.only)
 }
 \arguments{
-\item{phylo}{A \code{phylo} object defining the hierarchy.}
-
 \item{graph}{A \code{igraph} object to be drawn.}
+
+\item{phylo}{A \code{phylo} object defining the hierarchy.}
 
 \item{beta}{A number between 0 and 1 controlling the bundling strength.}
 
@@ -52,27 +52,38 @@ n <- 10
 
 # Create a graph
 corr <- cor(matrix(rnorm(n^2), n, n))
-rownames(corr) <- colnames(corr) <-
-  apply(combn(LETTERS, 2), 2, paste0, collapse = "")[1:n]
-adj <- abs(corr)
-graph <- graph.adjacency(adj, mode = "un", weighted = TRUE, diag = FALSE)
+rownames(corr) <- colnames(corr) <- LETTERS[1:n]
+adjMat <- abs(corr)
+graph <- graph.adjacency(adjMat, mode = "un", weighted = TRUE, diag = FALSE)
 E(graph)$color <- ifelse(corr[lower.tri(corr)] < 0, "blue", "red")
+E(graph)$width <- 10*adjMat[lower.tri(adjMat)]
 
-phylo <- as.phylo(hclust(as.dist(1 - adj), method = "ward.D"))
-plotHierarchicalEdgeBundles(phylo, graph, type = "fan",
+# Generate dendrogram
+phylo <- as.phylo(hclust(as.dist(1 - adjMat), method = "complete"))
+
+# Plot 1 - the graph and the tree
+par(mfrow = c(1,2))
+plot(graph, layout = layout.circle)
+plot(phylo, type = "fan")
+
+# Plot 2 - Combining the two
+plotHierarchicalEdgeBundles(graph, phylo, type = "fan",
                             e.cols = E(graph)$color)
 
-par(mfrow = c(1, 3), mar = c(0, 0, 0, 0))
+par(mfrow = c(2, 2), mar = c(0, 0, 2, 0))
 plot(phylo, type = "fan")
-plotHierarchicalEdgeBundles(phylo, graph, type = "fan", beta = 0.95,
-                            args.lines = list(col = "#4682B470"))
-plotHierarchicalEdgeBundles(phylo, graph, type = "fan", beta = 0.85,
-                            args.lines = list(col = "#4682B470"))
+plot(graph, layout = layout.circle)
+plotHierarchicalEdgeBundles(graph, phylo, type = "fan", beta = 0.95,
+                            args.lines = list(col = "#4682B470"),
+                            main = "High bundling strength")
+plotHierarchicalEdgeBundles(graph, phylo, type = "fan", beta = 0.55,
+                            args.lines = list(col = "#4682B470"),
+                            main = "Low bundling strength")
 
-# Extra control of plotting and debugging
+# Plot 3 - Extra control of plotting and debugging
 par(mfrow = c(1,2))
 plot(phylo, type = "unrooted")
-plotHierarchicalEdgeBundles(phylo, graph, type = "unrooted", beta = 0.8,
+plotHierarchicalEdgeBundles(graph, phylo, type = "unrooted", beta = 0.8,
                             v.use.only = 1, debug = FALSE,
                             args.lines = list(col = "red", lwd = 2))
 }
