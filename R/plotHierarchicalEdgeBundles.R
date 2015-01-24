@@ -37,13 +37,13 @@
 #' # Create a graph
 #' corr <- cor(matrix(rnorm(n^2), n, n))
 #' rownames(corr) <- colnames(corr) <- LETTERS[1:n]
-#' adjMat <- abs(corr)
-#' graph <- graph.adjacency(adjMat, mode = "un", weighted = TRUE, diag = FALSE)
+#' adj.mat <- abs(corr)
+#' graph <- graph.adjacency(adj.mat, mode = "un", weighted = TRUE, diag = FALSE)
 #' E(graph)$color <- ifelse(corr[lower.tri(corr)] < 0, "blue", "red")
-#' E(graph)$width <- 10*adjMat[lower.tri(adjMat)]
+#' E(graph)$width <- 10*adj.mat[lower.tri(adjMat)]
 #' 
 #' # Generate dendrogram
-#' phylo <- as.phylo(hclust(as.dist(1 - adjMat), method = "complete"))
+#' phylo <- as.phylo(hclust(as.dist(1 - adj.mat), method = "complete"))
 #' 
 #' # Plot 1 - the graph and the tree
 #' par(mfrow = c(1,2))
@@ -86,8 +86,8 @@ plotHierarchicalEdgeBundles <- function(graph,
                                         e.use.only) {
     
   plot(phylo, edge.color = ifelse(debug,"grey","#00000000"), ...)
-  phy.dat <- get("last_plot.phylo", envir = .PlotPhyloEnv)
-  pos <- with(phy.dat, data.frame(i = seq_along(xx), x = xx, y = yy))
+  last.plot.phylo <- get("last_plot.phylo", envir = .PlotPhyloEnv)
+  pos <- with(last.plot.phylo, data.frame(i = seq_along(xx), x = xx, y = yy))
   # Add points
   if (debug) {
     points(pos$x, pos$y, col = "black", pch = 16, cex = 0.5)

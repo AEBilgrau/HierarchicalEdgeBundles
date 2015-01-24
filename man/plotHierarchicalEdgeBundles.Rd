@@ -53,13 +53,13 @@ n <- 10
 # Create a graph
 corr <- cor(matrix(rnorm(n^2), n, n))
 rownames(corr) <- colnames(corr) <- LETTERS[1:n]
-adjMat <- abs(corr)
-graph <- graph.adjacency(adjMat, mode = "un", weighted = TRUE, diag = FALSE)
+adj.mat <- abs(corr)
+graph <- graph.adjacency(adj.mat, mode = "un", weighted = TRUE, diag = FALSE)
 E(graph)$color <- ifelse(corr[lower.tri(corr)] < 0, "blue", "red")
-E(graph)$width <- 10*adjMat[lower.tri(adjMat)]
+E(graph)$width <- 10*adj.mat[lower.tri(adjMat)]
 
 # Generate dendrogram
-phylo <- as.phylo(hclust(as.dist(1 - adjMat), method = "complete"))
+phylo <- as.phylo(hclust(as.dist(1 - adj.mat), method = "complete"))
 
 # Plot 1 - the graph and the tree
 par(mfrow = c(1,2))
