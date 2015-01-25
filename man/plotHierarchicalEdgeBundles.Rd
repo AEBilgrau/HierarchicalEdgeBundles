@@ -56,7 +56,7 @@ rownames(corr) <- colnames(corr) <- LETTERS[1:n]
 adj.mat <- abs(corr)
 graph <- graph.adjacency(adj.mat, mode = "un", weighted = TRUE, diag = FALSE)
 E(graph)$color <- ifelse(corr[lower.tri(corr)] < 0, "blue", "red")
-E(graph)$width <- 10*adj.mat[lower.tri(adjMat)]
+E(graph)$width <- 10*adj.mat[lower.tri(adj.mat)]
 
 # Generate dendrogram
 phylo <- as.phylo(hclust(as.dist(1 - adj.mat), method = "complete"))
