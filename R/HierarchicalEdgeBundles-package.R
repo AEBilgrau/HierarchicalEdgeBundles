@@ -15,6 +15,15 @@
 #'   Transactions on 12.5 (2006): 741-748.
 #' @seealso
 #'   Core user function: \code{\link{plotHierarchicalEdgeBundles}}
+#' @examples
+#' library("igraph")
+#' library("ape")
+#' 
+#' graph <- watts.strogatz.game(1, size = 10, nei = 2, p = 0.5)
+#' adj.mat <- get.adjacency(graph)
+#' phylo <- as.phylo(hclust(as.dist(1-adj.mat)))
+#' 
+#' plotHierarchicalEdgeBundles(graph, phylo, type = "fan")
 #' @import igraph
 #' @importFrom ape plot.phylo
 NULL
