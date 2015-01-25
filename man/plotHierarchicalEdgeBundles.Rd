@@ -70,9 +70,7 @@ plot(phylo, type = "fan")
 plotHierarchicalEdgeBundles(graph, phylo, type = "fan",
                             e.cols = E(graph)$color)
 
-par(mfrow = c(2, 2), mar = c(0, 0, 2, 0))
-plot(phylo, type = "fan")
-plot(graph, layout = layout.circle)
+par(mfrow = c(1, 2), mar = c(0, 0, 2, 0))
 plotHierarchicalEdgeBundles(graph, phylo, type = "fan", beta = 0.95,
                             args.lines = list(col = "#4682B470"),
                             main = "High bundling strength")
