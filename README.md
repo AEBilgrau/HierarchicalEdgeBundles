@@ -2,6 +2,8 @@
 Hierarchical Edge Bundles in R
 ------------------------------
 
+[![Build Status](https://api.travis-ci.org/AEBilgrau/HierarchicalEdgeBundles.svg?branch=master)](https://travis-ci.org/AEBilgrau/HierarchicalEdgeBundles)
+
 This packages implements a crude version of the excellent visualization method of hierarchical edge bundling (Holten, 2006) in R.
 
 ## Installation
