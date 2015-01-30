@@ -43,9 +43,9 @@ bSpline <- function(x, y, order = 4, n.evals = 100) {
 }
 
 
-#' De Boor's algorihmn for evaluating B-splines
+#' De Boor's algorithm for evaluating B-splines
 #' 
-#' Evaluate piecewise B-splines a various parameter values. Internal function.
+#' Evaluate piece wise B-splines a various parameter values. Internal function.
 #' 
 #' @param x A n by 2 matrix of control points.
 #' @param t A vector of support points
