@@ -1,6 +1,6 @@
-#' Plot piecewise B-splines
+#' Plot piece wise B-splines
 #' 
-#' Add piecewise B-splines of supplied order to a plot. The function
+#' Add piece wise B-splines of supplied order to a plot. The function
 #' uses the \code{lines} function to plot to the current device.
 #' 
 #' @param x A vector giving the x-coordinates of the control points. 
