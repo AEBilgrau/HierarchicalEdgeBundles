@@ -1,7 +1,7 @@
 #' Hierarchical Edge Bundling
 #'
 #' Visualization of networks using hierarchical edge bundles referenced below.
-#' Plots a graph using a hierachical tree as guides for the edges.
+#' Plots a graph using a hierarchical tree as guides for the edges.
 #'
 #' @param graph A \code{igraph} object to be drawn.
 #' @param phylo A \code{phylo} object defining the hierarchy.

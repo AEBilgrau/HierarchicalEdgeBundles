@@ -43,7 +43,7 @@ Plots to a new device.
 }
 \description{
 Visualization of networks using hierarchical edge bundles referenced below.
-Plots a graph using a hierachical tree as guides for the edges.
+Plots a graph using a hierarchical tree as guides for the edges.
 }
 \examples{
 library("igraph")
