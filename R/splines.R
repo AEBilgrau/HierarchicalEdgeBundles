@@ -97,7 +97,7 @@ deboor <- function(x, t, y, order) {
 
 #' Straightened Spline curves
 #' 
-#' Function for straightning Bezier or B-spline curves.
+#' Function for straightening Bezier or B-spline curves.
 #' 
 #' @param x A numeric vector giving the x-coordinates of the control points. 
 #'   Alternatively, it can be a \code{list} (or \code{data.frame}) containing

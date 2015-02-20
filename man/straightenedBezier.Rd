@@ -28,7 +28,7 @@ Returns a \code{list} of length 2 with entries \code{x} and \code{y} of
   x and y coordinates corresponding to the evaluations of the B-spline.
 }
 \description{
-Function for straightning Bezier or B-spline curves.
+Function for straightening Bezier or B-spline curves.
 }
 \note{
 The straightening is done by modifying the control points as described
