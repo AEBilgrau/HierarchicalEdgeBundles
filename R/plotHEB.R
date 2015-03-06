@@ -51,9 +51,9 @@
 #' plot(phylo, type = "fan")
 #'
 #' # Plot 2 - Combining the two
-#' plotHEB(graph, phylo, type = "fan",
-#'                             e.cols = E(graph)$color)
+#' plotHEB(graph, phylo, type = "fan", e.cols = E(graph)$color)
 #'
+#' 
 #' par(mfrow = c(1, 2), mar = c(0, 0, 2, 0))
 #' plotHEB(graph, phylo, type = "fan", beta = 0.95,
 #'                             args.lines = list(col = "#4682B470"),
