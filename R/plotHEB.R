@@ -110,8 +110,13 @@ plotHEB <- function(graph,
   sp <- lapply(seq_along(sp2), function(i) unname(c(es[i,1],sp2[[i]],es[i,2])))
   names(sp) <- names(sp2)
 
-  # Plot spline curve for each path
-  for (i in seq_along(sp)) {
+  # Get plot order if weights are present
+  if (!is.null(E(graph)$weight)) {
+    o <- order(abs(E(graph)$weight))
+  }  
+
+  # Plot spline curve for each path, 
+  for (i in seq_along(sp)[o]) {
     path <- sp[[i]]
     d <- pos[path, ]
     if (simplify) {
