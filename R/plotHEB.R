@@ -113,10 +113,13 @@ plotHEB <- function(graph,
   # Get plot order if weights are present
   if (!is.null(E(graph)$weight)) {
     o <- order(abs(E(graph)$weight))
-  }  
+    indicies <- seq_along(sp)[o]
+  } else {
+    indicies <- seq_along(sp)
+  } 
 
   # Plot spline curve for each path, 
-  for (i in seq_along(sp)[o]) {
+  for (i in indicies) {
     path <- sp[[i]]
     d <- pos[path, ]
     if (simplify) {
