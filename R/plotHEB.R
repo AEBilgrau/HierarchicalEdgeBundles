@@ -97,7 +97,14 @@ plotHEB <- function(graph,
   if (!is.null(V(graph)$name)) {
     es <- structure(match(es, V(graph)$name), dim = dim(es))
   }
+  
+  # Get plot order by edge weights if present
+  if (!is.null(E(graph)$weight)) {
+    o <- order(abs(E(graph)$weight))
+    es <- es[o, ]  
+  }
 
+  # Drop unused
   if (!missing(v.use.only)) es <- es[es[, 1] %in% v.use.only, , drop = FALSE]
   if (!missing(e.use.only)) es <- es[e.use.only, , drop = FALSE]
 
@@ -110,16 +117,8 @@ plotHEB <- function(graph,
   sp <- lapply(seq_along(sp2), function(i) unname(c(es[i,1],sp2[[i]],es[i,2])))
   names(sp) <- names(sp2)
 
-  # Get plot order if weights are present
-  if (!is.null(E(graph)$weight)) {
-    o <- order(abs(E(graph)$weight))
-    indicies <- seq_along(sp)[o]
-  } else {
-    indicies <- seq_along(sp)
-  } 
-
   # Plot spline curve for each path, 
-  for (i in indicies) {
+  for (i in seq_along(sp)) {
     path <- sp[[i]]
     d <- pos[path, ]
     if (simplify) {
