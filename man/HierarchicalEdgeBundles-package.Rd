@@ -8,7 +8,11 @@
 \title{Visualize graphs using Hierarchical Edge Bundles}
 \description{
 Visualize graphs using a crude version of the hierarchical edge bundling
-method described in the reference below.
+method.
+Hierarchical edge bundling visualizes graphs by guiding edges along along
+a hierarchical tree of the nodes. A bundling parameter controls how tightly
+the edges follow the tree.
+For details confer the reference below.
 }
 \examples{
 library("igraph")
