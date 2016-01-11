@@ -11,7 +11,7 @@
 #' @aliases HierarchicalEdgeBundles-package HierarchicalEdgeBundles HEB
 #' @author
 #'   Anders Ellern Bilgrau \cr
-#'   Maintainer: Anders Ellern Bilgrau <abilgrau@@math.aau.dk>
+#'   Maintainer: Anders Ellern Bilgrau <anders.ellern.bilgrau@@gmail.com>
 #' @docType package
 #' @references
 #'   Holten, Danny. "Hierarchical edge bundles: Visualization of adjacency

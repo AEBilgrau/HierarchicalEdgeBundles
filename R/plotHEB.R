@@ -24,7 +24,7 @@
 #' @return Plots to a new device.
 #' @seealso See \code{\link[ape]{plot.phylo}}.
 #' @author
-#'   Anders Ellern Bilgrau <abilgrau (at) math.aau.dk>
+#'   Anders Ellern Bilgrau <anders.ellern.bilgrau (at) gmail.com>
 #' @references
 #'   Holten, Danny. "Hierarchical edge bundles: Visualization of adjacency
 #'   relations in hierarchical data." Visualization and Computer Graphics, IEEE

@@ -4,7 +4,7 @@ Title: Plotting via Hierarchical Edge Bundles
 Version: 0.1
 Date: 2014-01-20
 Author: Anders Ellern Bilgrau
-Maintainer: Anders Ellern Bilgrau <abilgrau@math.aau.dk>
+Maintainer: Anders Ellern Bilgrau <anders.ellern.bilgrau@gmail.com>
 URL: https://github.com/AEBilgrau/HierarchicalEdgeBundles
 BugReports: https://github.com/AEBilgrau/HierarchicalEdgeBundles/issues
 Description: Plot graphs and dendrograms with hierarchical edge bundling
