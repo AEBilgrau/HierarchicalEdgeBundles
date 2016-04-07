@@ -127,7 +127,7 @@ deboor <- function(x, t, y, order) {
 #'   lines(HierarchicalEdgeBundles:::straightenedBezier(x, beta = b))
 #' @keywords internal
 straightenedBezier <- function(x, y, beta = 0.5, n.evals = 100) {
-  stopifnot(require("Hmisc"))
+  stopifnot(requireNamespace("Hmisc"))
   if (missing(y)) {
     if (!is.list(x)) {
       stop("If y is not supplied, then x must be a list or data.frame.")
